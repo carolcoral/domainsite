@@ -380,6 +380,9 @@ img{
   font-size: var(--small-font-size);
   margin-bottom: var(--mb-1);
   color: var(--text-color-light);
+
+  overflow: hidden;
+  max-height: 8em;
 }
 
 .accessory__preci{
@@ -518,7 +521,7 @@ img{
   .send__img{
     width: 100%;
   }
-  
+
   .share__img{
     order: -1;
   }
