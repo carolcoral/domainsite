@@ -196,6 +196,10 @@ img{
   color: var(--first-color);
 }
 
+.tooltip-container .nav__link:hover {
+  color: #5b46e8;
+}
+
 .nav__toggle{
   font-size: 1.3rem;
   cursor: pointer;
@@ -225,6 +229,13 @@ img{
 /* Change background header */
 .scroll-header{
   box-shadow: 0 1px 4px rgba(0,0,0,.1);
+}
+
+.scrollHeader{
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+  height: 200px;
+  overflow: scroll;
+  border-bottom: solid 0.2em #a940fd;
 }
 
 /* Scroll top */

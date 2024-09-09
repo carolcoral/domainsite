@@ -6,7 +6,8 @@ export default {
   data() {
     return {
       head: config.head,
-      body: config.body
+      body: config.body,
+      isActiveMenu: true
     }
   },
   methods: {
@@ -18,10 +19,53 @@ export default {
       headTag.insertAdjacentHTML('afterbegin', favicon)
       headTag.insertAdjacentHTML('afterbegin', icon)
       headTag.insertAdjacentHTML('afterbegin', title)
+    },
+
+    switchThemeLight() {// Add or remove the dark / icon theme
+      /*==================== DARK LIGHT THEME ====================*/
+      const themeButton = document.getElementById('themeButton')
+      const darkTheme = 'dark-theme'
+      const iconTheme = 'bx-toggle-right'
+
+      // Previously selected topic (if user selected)
+      const selectedTheme = localStorage.getItem('selected-theme')
+      const selectedIcon = localStorage.getItem('selected-icon')
+
+      // We obtain the current theme that the interface has by validating the dark-theme class
+      const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+      const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-toggle-left' : 'bx-toggle-right'
+
+      // We validate if the user previously chose a topic
+      if (selectedTheme) {
+        // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+        document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+        themeButton.classList[selectedIcon === 'bx-toggle-left' ? 'add' : 'remove'](iconTheme)
+      }
+      document.body.classList.toggle(darkTheme)
+      themeButton.classList.toggle(iconTheme)
+      // We save the theme and the current icon that the user chose
+      localStorage.setItem('selected-theme', getCurrentTheme())
+      localStorage.setItem('selected-icon', getCurrentIcon())
+    },
+    activeMenu(hash) {
+      const sections = document.querySelectorAll('section[id]')
+      let href = window.location.hash
+      if (hash == undefined) {
+        hash = href
+      }
+      sections.forEach(current => {
+        let sectionId = current.getAttribute('id')
+        document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('text')
+        if (hash.toString().indexOf(sectionId) != -1) {
+          document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('text')
+        }
+      })
     }
   },
+  computed: {},
   mounted() {
     this.createHead()
+    this.activeMenu(undefined)
   }
 }
 </script>
@@ -37,16 +81,27 @@ export default {
 
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list tooltip-container">
-          <li class="nav__item"><a href="#home" class="nav__link text">首页</a></li>
-          <li class="nav__item"><a href="#Contact" class="nav__link" v-if="body.contact.enable">联系</a></li>
-          <li class="nav__item"><a href="#Exhibition" class="nav__link" v-if="body.exhibition.enable">展示</a></li>
-          <li class="nav__item"><a href="#Sales" class="nav__link" v-if="body.sales.enable">售卖</a></li>
-          <li class="nav__item"><a href="/us" class="nav__link">English</a></li>
+          <li class="nav__item">
+            <a href="#home" class="nav__link" @click="activeMenu('home')">首页</a>
+          </li>
+          <li class="nav__item">
+            <a href="#Contact" class="nav__link" v-if="body.contact.enable" @click="activeMenu('Contact')">联系</a>
+          </li>
+          <li class="nav__item">
+            <a href="#Exhibition" class="nav__link" v-if="body.exhibition.enable"
+               @click="activeMenu('Exhibition')">展示</a>
+          </li>
+          <li class="nav__item">
+            <a href="#Sales" class="nav__link" v-if="body.sales.enable" @click="activeMenu('Sales')">售卖</a>
+          </li>
+          <li class="nav__item">
+            <a href="/us" class="nav__link">English</a>
+          </li>
 
           <!-- <li><i class="bx bx-toggle-left change-theme" id="theme-button"></i></li> -->
           <li>
             <label class="theme-switch change-theme">
-              <input type="checkbox" class="theme-switch__checkbox" id="theme-button">
+              <input type="checkbox" class="theme-switch__checkbox" id="themeButton" @click="switchThemeLight">
               <div class="theme-switch__container">
                 <div class="theme-switch__clouds"></div>
                 <div class="theme-switch__stars-container">
@@ -79,5 +134,9 @@ export default {
 </template>
 
 <style scoped>
-
+.scroll_Header {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+  overflow: scroll;
+  border-bottom: solid 0.2em #a940fd;
+}
 </style>

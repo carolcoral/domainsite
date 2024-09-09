@@ -84,6 +84,7 @@
   </main>
   <Footer></Footer>
 </template>
+
 <style scoped>
 
 </style>
