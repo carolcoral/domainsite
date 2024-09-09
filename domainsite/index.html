@@ -27,8 +27,8 @@
       <ul class="nav__list tooltip-container">
         <li class="nav__item"><a href="#home" class="nav__link text">首页</a></li>
         <li class="nav__item"><a href="#Contact" class="nav__link">联系</a></li>
-        <li class="nav__item"><a href="#Exhibition" class="nav__link">展示</a></li>
         <li class="nav__item"><a href="#Sales" class="nav__link">售卖</a></li>
+        <li class="nav__item"><a href="#Services" class="nav__link">服务</a></li>
         <li class="nav__item"><a href="/us.html" class="nav__link">English</a></li>
         
         <!-- <li><i class="bx bx-toggle-left change-theme" id="theme-button"></i></li> -->
@@ -157,25 +157,6 @@
     </div>
   </section>
   
-  <!--========== 展示 ==========-->
-  <section class="decoration section bd-container" id="Exhibition">
-    <h2 class="section-title">独特且唯一呈现，让你流连忘返<br> 展示</h2>
-    <div class="decoration__container bd-grid">
-      <div class="decoration__data">
-        <img src="assert/image/site/xindu.site-removebg-preview.png" alt="" class="decoration__img">
-        <h3 class="decoration__title">XINDU·SITE</h3>
-        <a href="https://xindu.site/" class="button button-link" target="_blank">访问</a>
-      </div>
-      
-      <div class="decoration__data">
-        <img src="assert/image/site/cnkj.site-removebg-preview.png" alt="" class="decoration__img">
-        <h3 class="decoration__title">CNKJ·SITE</h3>
-        <a href="https://cnkj.site/" class="button button-link" target="_blank">访问</a>
-      </div>
-    
-    </div>
-  </section>
-  
   <!--========== 售卖 ==========-->
   <section class="accessory section bd-container" id="Sales">
     <h2 class="section-title">基本不赚钱，交个朋友 <br> 售卖</h2>
@@ -254,7 +235,13 @@
     
     </div>
   </section>
-
+  
+  <!--========== 服务 ==========-->
+  <section class="decoration section bd-container" id="Services">
+    <h2 class="section-title">不仅仅有优秀的域名，还有更多优秀的服务<br>服务</h2>
+    <div class="decoration__container bd-grid" id="sales_shop">
+      <!-- 商品列表 -->
+  </section>
 
 </main>
 
@@ -263,7 +250,7 @@
   <div class="footer__container bd-container bd-grid">
     <div class="footer__content">
       <h3 class="footer__title">
-        <a href="#" class="footer__logo">CNKJ·Site</a>
+        <a href="#" class="footer__logo footer_icon">CNKJ·Site</a>
       </h3>
       <ul>
         <li class="concat_footer">
@@ -278,7 +265,7 @@
     </div>
     
     <div class="footer__content">
-      <h3 class="footer__title">已售</h3>
+      <h3 class="footer__title footer_icon codepen_button"><span>已售</span></h3>
       <ul>
         <li>wannas.cn</li>
         <li>shudaosan.cn</li>
@@ -287,7 +274,7 @@
     </div>
     
     <div class="footer__content">
-      <h3 class="footer__title">更多</h3>
+      <h3 class="footer__title footer_icon codepen_button"><span>更多</span></h3>
       <ul>
         <li class="concat_footer">
           <a href="https://xindu.site/" class="footer__social" target="_blank">
@@ -340,7 +327,7 @@
     </div>
     
     <div class="footer__content">
-      <h3 class="footer__title">联系</h3>
+      <h3 class="footer__title footer_icon codepen_button"><span>联系</span></h3>
       <ul>
         <li class="concat_footer">
           <a href="mailto: lxw@cnkj.site" class="footer__social">
@@ -367,6 +354,8 @@
 
 <!--========== MAIN JS ==========-->
 <script src="assert/main.js"></script>
+<!-- 获取商品 -->
+<script src="assert/shops.js"></script>
 
 <style>
   .contact_me {
@@ -425,28 +414,28 @@
 </style>
 
 <script>
-  window.onload = function() {
-    // 1.禁用右键菜单
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault()
-    })
-    // 2.禁用鼠标选中
-    document.addEventListener('selectstart', function(e) {
-      e.preventDefault()
-    })
-    // 3.禁止键盘F12键和功能按键
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'F12') {
-        e.preventDefault() // 如果按下键F12,阻止事件
-      }
-      if (e.metaKey) {
-        e.preventDefault() // 禁止所有command按键操作
-      }
-      if (e.ctrlKey) {
-        e.preventDefault()
-      }
-    })
-  }
+  // window.onload = function() {
+  //   // 1.禁用右键菜单
+  //   document.addEventListener('contextmenu', function(e) {
+  //     e.preventDefault()
+  //   })
+  //   // 2.禁用鼠标选中
+  //   document.addEventListener('selectstart', function(e) {
+  //     e.preventDefault()
+  //   })
+  //   // 3.禁止键盘F12键和功能按键
+  //   document.addEventListener('keydown', function(e) {
+  //     if (e.key === 'F12') {
+  //       e.preventDefault() // 如果按下键F12,阻止事件
+  //     }
+  //     if (e.metaKey) {
+  //       e.preventDefault() // 禁止所有command按键操作
+  //     }
+  //     if (e.ctrlKey) {
+  //       e.preventDefault()
+  //     }
+  //   })
+  // }
 </script>
 
 </body>
