@@ -196,6 +196,10 @@ img{
   color: var(--first-color);
 }
 
+.tooltip-container .nav__link:hover {
+  color: #5b46e8;
+}
+
 .nav__toggle{
   font-size: 1.3rem;
   cursor: pointer;
@@ -356,10 +360,35 @@ img{
   background-color: var(--container-color);
   box-shadow: 0 2px 6px rgba(65,11,16,.15);
   border-radius: 1rem;
+
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
 }
 
 .accessory__content:hover{
   box-shadow: 0 3px 12px rgba(65,11,16,.15);
+}
+
+.accessory__content::before {
+  content: '';
+  background-color: var(--container-color);
+  position: absolute;
+  width: 18%;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+  z-index: -1;
+}
+
+.accessory__content::after {
+  content: '';
+  position: absolute;
+  background: var(--container-color);;
+  inset: 5px;
+  border-radius: 15px;
+  z-index: -1;
 }
 
 .accessory__img{
