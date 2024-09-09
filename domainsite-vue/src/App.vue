@@ -8,6 +8,7 @@ import { RouterView } from 'vue-router'
 
 <style>
 @import "@/assets/styles.css";
+@import "@/assets/special.effects.css";
 
 .contact_me {
   padding: 0 0 1em;
