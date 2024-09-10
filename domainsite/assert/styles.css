@@ -664,7 +664,7 @@ img {
     gap: 1rem;
     width: 19em;
     padding: 1rem;
-    height: 35em;
+    height: 25em;
     margin-left: 1em;
     margin-top: 2em;
     float: left;
@@ -748,7 +748,7 @@ img {
     overflow-y: scroll;
     max-height: 20em;
     font-size: 12px;
-    height: 30em;
+    height: 10em;
 }
 
 .card .card_title__container .card_paragraph::-webkit-scrollbar {

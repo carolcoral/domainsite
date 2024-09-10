@@ -84,11 +84,14 @@
   <!--========== 联系 ==========-->
   <section class="share section bd-container" id="Contact">
     <div class="share__container bd-grid">
+      <div class="share__img">
+        <img src="assert/image/联系.png" alt="">
+      </div>
       <div class="share__data">
         <h2 class="section-title-center">联系我</h2>
         <ul>
           <li class="contact_me">
-            <a href="mailto: lxw@cnkj.site" class="footer__social">
+            <a href="#Contact" class="footer__social">
               <svg t="1725586042949" class="icon" viewBox="0 0 1194 1024" version="1.1"
                    xmlns="http://www.w3.org/2000/svg" p-id="26667" width="200" height="200">
                 <path
@@ -110,7 +113,7 @@
             </a>
           </li>
           <li class="contact_me">
-            <a href="mailto: lxw@cnkj.site" class="footer__social">
+            <a href="#Contact" class="footer__social">
               <svg t="1725586181082" class="icon" viewBox="0 0 1024 1024" version="1.1"
                    xmlns="http://www.w3.org/2000/svg" p-id="29846" width="200" height="200">
                 <path
@@ -127,7 +130,7 @@
             </a>
           </li>
           <li class="contact_me">
-            <a href="mailto: lxw@cnkj.site" class="footer__social">
+            <a href="#Contact" class="footer__social">
               <svg t="1725586299726" class="icon" viewBox="0 0 1024 1024" version="1.1"
                    xmlns="http://www.w3.org/2000/svg" p-id="35482" width="200" height="200">
                 <path
@@ -138,7 +141,7 @@
             </a>
           </li>
           <li class="contact_me">
-            <a href="mailto: lxw@cnkj.site" class="footer__social">
+            <a href="#Contact" class="footer__social">
               <svg t="1725586394149" class="icon" viewBox="0 0 1092 1024" version="1.1"
                    xmlns="http://www.w3.org/2000/svg" p-id="44338" width="200" height="200">
                 <path
@@ -150,9 +153,6 @@
           </li>
         </ul>
         <a href="#Contact" class="button tooltip-container text">电子邮件：lxw@cnkj.site</a>
-      </div>
-      <div class="share__img">
-        <img src="assert/image/联系.png" alt="">
       </div>
     </div>
   </section>
@@ -414,28 +414,28 @@
 </style>
 
 <script>
-  // window.onload = function() {
-  //   // 1.禁用右键菜单
-  //   document.addEventListener('contextmenu', function(e) {
-  //     e.preventDefault()
-  //   })
-  //   // 2.禁用鼠标选中
-  //   document.addEventListener('selectstart', function(e) {
-  //     e.preventDefault()
-  //   })
-  //   // 3.禁止键盘F12键和功能按键
-  //   document.addEventListener('keydown', function(e) {
-  //     if (e.key === 'F12') {
-  //       e.preventDefault() // 如果按下键F12,阻止事件
-  //     }
-  //     if (e.metaKey) {
-  //       e.preventDefault() // 禁止所有command按键操作
-  //     }
-  //     if (e.ctrlKey) {
-  //       e.preventDefault()
-  //     }
-  //   })
-  // }
+  window.onload = function() {
+    // 1.禁用右键菜单
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault()
+    })
+    // 2.禁用鼠标选中
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault()
+    })
+    // 3.禁止键盘F12键和功能按键
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') {
+        e.preventDefault() // 如果按下键F12,阻止事件
+      }
+      if (e.metaKey) {
+        e.preventDefault() // 禁止所有command按键操作
+      }
+      if (e.ctrlKey) {
+        e.preventDefault()
+      }
+    })
+  }
 </script>
 
 </body>
