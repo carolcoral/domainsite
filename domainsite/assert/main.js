@@ -105,6 +105,7 @@ const sr = ScrollReveal({
 sr.reveal(`.home__data, .home__img, 
            .decoration__data,
            .accessory__content,
+           .card,
            .footer__content`, {
     origin: 'top',
     interval: 200,

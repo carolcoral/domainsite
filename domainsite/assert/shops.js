@@ -1,7 +1,12 @@
-window.onload = function() {
+// window.onload = function() {
+//   let siteName = 'https://blog.xindu.site'
+//   analyzeData(siteName)
+// }
+
+document.addEventListener('DOMContentLoaded', function() {
   let siteName = 'https://blog.xindu.site'
   analyzeData(siteName)
-}
+})
 
 function getShops(siteName = '') {
   let url = siteName + '/apis/api.plugin.halo.run/v1alpha1/plugins/plugin-afdian/afdian/listPlansAndSales'
