@@ -1,5 +1,10 @@
-function getShops() {
-  let url = 'https://blog.xindu.site/apis/api.plugin.halo.run/v1alpha1/plugins/plugin-afdian/afdian/listPlansAndSales'
+window.onload = function() {
+  let siteName = 'https://blog.xindu.site'
+  analyzeData(siteName)
+}
+
+function getShops(siteName = '') {
+  let url = siteName + '/apis/api.plugin.halo.run/v1alpha1/plugins/plugin-afdian/afdian/listPlansAndSales'
   let httpRequest = new XMLHttpRequest()//第一步：建立所需的对象
   httpRequest.open('GET', url, true)//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
   httpRequest.send()//第三步：发送请求  将请求参数写在URL中
@@ -11,29 +16,25 @@ function getShops() {
       let json = httpRequest.responseText//获取到json字符串，还需解析
       let jsonSource = JSON.parse(json)
       let sale_list = jsonSource['data']['sale_list']
-      console.log(sale_list)
-      localStorage.removeItem("afdian_sale_list")
-      localStorage.setItem("afdian_sale_list", JSON.stringify(sale_list))
-      return sale_list
+      localStorage.removeItem('afdian_sale_list')
+      localStorage.setItem('afdian_sale_list', JSON.stringify(sale_list))
     }
   }
-  return null
 }
 
-function analyzeData() {
+function analyzeData(siteName = '') {
   // 做localStorage缓存
-  let localData = ''
-  if (expireLocalData("afdian_sale_list_expire", 86400000)) {
+  let localData
+  if (localData === undefined || localData === null || localData.length === 0 || !expireLocalData('afdian_sale_list_expire', 86400000)) {
+    getShops(siteName)
     localData = localStorage.getItem('afdian_sale_list')
-  }else {
-    localData = getShops()
-    localStorage.setItem("afdian_sale_list_expire", new Date().getTime())
+    localStorage.setItem('afdian_sale_list_expire', new Date().getTime())
+  } else {
+    localData = localStorage.getItem('afdian_sale_list')
   }
-  if (localData === undefined || localData === null || localData === '' || localData.length === 0) {
-    localData = getShops()
-  }
+  console.log('localdata', localData)
   if (localData !== null && localData !== undefined) {
-    localData = localStorage.getItem('afdian_sale_list')
+    console.log('afdian_sale_list', localData)
     let afdian_sale_list = JSON.parse(localData)
     let sales_shop = document.getElementById('sales_shop')
     const htmlList = []
@@ -81,15 +82,13 @@ function analyzeData() {
 
 }
 
-window.onload = function() {
-  analyzeData()
-}
-
-function expireLocalData(localDataKey = '', expireDate = 6000){
+function expireLocalData(localDataKey = '', expireDate = 6000) {
   let dataExpireDate = localStorage.getItem(localDataKey)
   if (dataExpireDate === undefined || dataExpireDate === null) {
     return false
   }
   let dateNow = new Date().getTime()
-  return (dataExpireDate + expireDate) < dateNow;
+  return (dataExpireDate + expireDate) < dateNow
 }
+
+
