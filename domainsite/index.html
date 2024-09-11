@@ -415,28 +415,28 @@
 </style>
 
 <script>
-  // window.onload = function() {
-  //   // 1.禁用右键菜单
-  //   document.addEventListener('contextmenu', function(e) {
-  //     e.preventDefault()
-  //   })
-  //   // 2.禁用鼠标选中
-  //   document.addEventListener('selectstart', function(e) {
-  //     e.preventDefault()
-  //   })
-  //   // 3.禁止键盘F12键和功能按键
-  //   document.addEventListener('keydown', function(e) {
-  //     if (e.key === 'F12') {
-  //       e.preventDefault() // 如果按下键F12,阻止事件
-  //     }
-  //     if (e.metaKey) {
-  //       e.preventDefault() // 禁止所有command按键操作
-  //     }
-  //     if (e.ctrlKey) {
-  //       e.preventDefault()
-  //     }
-  //   })
-  // }
+  window.onload = function() {
+    // 1.禁用右键菜单
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault()
+    })
+    // 2.禁用鼠标选中
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault()
+    })
+    // 3.禁止键盘F12键和功能按键
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') {
+        e.preventDefault() // 如果按下键F12,阻止事件
+      }
+      if (e.metaKey) {
+        e.preventDefault() // 禁止所有command按键操作
+      }
+      if (e.ctrlKey) {
+        e.preventDefault()
+      }
+    })
+  }
 </script>
 
 </body>
