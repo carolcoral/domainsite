@@ -32,9 +32,7 @@ function analyzeData(siteName = '') {
   } else {
     localData = localStorage.getItem('afdian_sale_list')
   }
-  console.log('localdata', localData)
   if (localData !== null && localData !== undefined) {
-    console.log('afdian_sale_list', localData)
     let afdian_sale_list = JSON.parse(localData)
     let sales_shop = document.getElementById('sales_shop')
     const htmlList = []
