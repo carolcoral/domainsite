@@ -824,3 +824,67 @@ img {
     height: 140px;
 }
 
+/*备案号页脚*/
+
+#footer-banner {
+    padding: 2rem;
+    color: #363636;
+    margin-top: 1rem;
+    background: #f7f7f9;
+    display: flex;
+    overflow: hidden;
+    z-index: 999;
+    transition: 0.3s;
+    border-top: 1px solid #e3e8f7;
+    font-size: 1em;
+}
+
+#footer-banner .footer-banner-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    line-height: 2;
+}
+
+#footer-banner .footer-banner-left {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 32px;
+    align-items: center;
+}
+
+.footer-banner-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#footer-banner .footer-banner-link {
+    margin: 0 4px;
+    /*color: #363636;*/
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 8px;
+    border-radius: 12px;
+    line-height: 1;
+}
+
+a.footer-banner-link.cloud {
+    display: flex;
+    align-items: center;
+}
+
+#footer-banner .footer-banner-link .gongwangan {
+    height: 24px;
+}
+
+#footer-banner .footer-banner-link .gongwanganspan {
+    line-height: initial;
+    float: inline-end;
+}
