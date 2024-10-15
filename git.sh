@@ -1,2 +1,1 @@
-#bash
 git pull
