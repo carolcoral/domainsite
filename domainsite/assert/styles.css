@@ -828,14 +828,14 @@ img {
 
 #footer-banner {
     padding: 2rem;
-    color: #363636;
+    /*color: #363636;*/
     margin-top: 1rem;
-    background: #f7f7f9;
+    /*background: #f7f7f9;*/
     display: flex;
     overflow: hidden;
     z-index: 999;
     transition: 0.3s;
-    border-top: 1px solid #e3e8f7;
+    border-top: solid 0.2em #a940fd;
     font-size: 1em;
 }
 
